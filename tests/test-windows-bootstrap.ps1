@@ -130,10 +130,14 @@ try {
 
     if ($PythonExecutable) {
         $wanted = @('one', 'C:\Users\A B\', 'x"y', $unicode, 'semi;$(Get-Process)', '', 'trailing\')
-        $check = Invoke-ToolCheck $PythonExecutable (@('-I', '-S', '-c', 'import json,sys;print(json.dumps(sys.argv[1:]))') + $wanted)
+        # PS5.1 and PS7 enumerate a top-level ConvertFrom-Json array differently.
+        # A named array property avoids testing that host-shell difference while
+        # retaining the exact native argv/empty-string contract.
+        $check = Invoke-ToolCheck $PythonExecutable (@('-I', '-S', '-c', 'import json,sys;print(json.dumps({"argv":sys.argv[1:]}))') + $wanted)
         Check ($check.ExitCode -eq 0) 'Direct process argument fixture ran.'
-        $observed = @($check.Output | ConvertFrom-Json)
-        Check ($observed.Count -eq $wanted.Count) 'Direct process retains every argument.'
+        $decoded = $check.Output | ConvertFrom-Json
+        $observed = @($decoded.argv)
+        Check ($observed.Count -eq $wanted.Count) ('Direct process retains every argument. Synthetic response: ' + $check.Output.Trim())
         for ($i = 0; $i -lt $wanted.Count; $i++) { Check ($observed[$i] -ceq $wanted[$i]) ('Native argument roundtrip ' + $i) }
         Check (Test-Python $PythonExecutable) 'Existing compatible Python validates with isolated standard-library imports.'
     }
