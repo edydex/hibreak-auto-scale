@@ -114,4 +114,3 @@ The host-only tests use fake transports/policies and do not contact a phone:
 ```sh
 python3 -m unittest discover -s tests -v
 ```
-

@@ -15,6 +15,7 @@ function Reject([scriptblock]$Action, [string]$Message) {
     Check $failed $Message
 }
 function New-FixtureZip([string]$Path, [object[]]$Entries) {
+    Add-Type -AssemblyName System.IO.Compression
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $zip = [IO.Compression.ZipFile]::Open($Path, [IO.Compression.ZipArchiveMode]::Create)
     try {

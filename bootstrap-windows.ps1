@@ -206,6 +206,9 @@ function Get-SafeArchivePath([string]$Root, [string]$Name) {
 }
 
 function Expand-CheckedZip([string]$Archive, [string]$Destination) {
+    # Windows PowerShell 5.1 uses separate .NET Framework assemblies; loading
+    # FileSystem alone does not reliably resolve ZipArchive/ZipArchiveMode.
+    Add-Type -AssemblyName System.IO.Compression
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     Assert-NormalDirectory $Destination
     $zip = [IO.Compression.ZipFile]::OpenRead($Archive)
