@@ -22,12 +22,13 @@ Guided phone settings use Android's primary user (`0`), the verified Android 14 
 
 | Computer | Runtime support and limits |
 | --- | --- |
-| macOS 11+, Apple Silicon | Private dependency extraction/startup and reuse tested natively; live phone work performed from a Mac |
+| macOS 11+, Apple Silicon | Fresh private dependency download/extraction/startup passed on macOS 14 ARM64 CI; cache reuse and live phone work also tested from a Mac |
 | macOS 11+, Intel | Pinned runtime provided; native Intel acceptance not yet completed |
-| Linux x86_64 with glibc | Pinned Python/ADB provided; native phone/USB-rule acceptance remains separate |
+| Linux x86_64 with glibc | Fresh pinned Python/ADB download/extraction/startup and host tests passed on Ubuntu 24.04 x86_64 CI; physical USB/udev acceptance remains separate |
 | Linux ARM64 with glibc | Pinned Python provided; install your distribution's ADB first because Google's Linux archive is x86_64 |
 | Alpine / musl Linux | Use distribution Python and ADB; portable Python requires glibc 2.17+ |
-| Windows 10/11 AMD64 or ARM64, PowerShell 5.1+ | Portable runtimes provided; native Windows USB/driver and PowerShell 5.1 acceptance remain separate |
+| Windows 10/11 AMD64, PowerShell 5.1+ | Fresh portable Python/ADB and native PowerShell 5.1 checks passed on Windows Server 2022 x86_64 CI; desktop USB/driver acceptance remains separate |
+| Windows ARM64 | Portable ARM64 Python provided; Google ADB must also run on the host. Native ARM64/runtime compatibility acceptance is not completed |
 
 Linux also needs Bash and ordinary download/archive tools; preparing downloads uses curl, tar, awk, a SHA-256 tool and flock. The Windows launcher changes execution policy only for its process; it does not change user/machine policy or override managed Group Policy. Standard accessory approval, Linux USB permissions and Windows Android drivers remain operating-system steps.
 

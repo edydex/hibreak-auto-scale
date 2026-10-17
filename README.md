@@ -1,5 +1,7 @@
 # HiBreak Auto Scale
 
+[![Checks](https://github.com/edydex/hibreak-auto-scale/actions/workflows/checks.yml/badge.svg)](https://github.com/edydex/hibreak-auto-scale/actions/workflows/checks.yml)
+
 Fix oversized Android Auto controls on the Bigme HiBreak, then restore the phone's normal app density after disconnecting.
 
 The Android companion learns the receiver's actual display density. Selecting your paired car once lets its Bluetooth connection prepare Android Auto, Maps and Google before projection starts. **Prepare for car** remains available as a fallback. Each phone keeps its own recovery data; no fixed car DPI or another phone's settings are installed.

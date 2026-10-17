@@ -141,5 +141,5 @@ try {
         for ($i = 0; $i -lt $wanted.Count; $i++) { Check ($observed[$i] -ceq $wanted[$i]) ('Native argument roundtrip ' + $i) }
         Check (Test-Python $PythonExecutable) 'Existing compatible Python validates with isolated standard-library imports.'
     }
-    Write-Host ('PASS ' + $script:Checks + ' PowerShell host fixture checks. No Windows binary or phone was run.')
+    Write-Host ('PASS ' + $script:Checks + ' PowerShell host fixture checks. No phone command was run.')
 } finally { if ([IO.Directory]::Exists($temporary)) { Remove-Item -LiteralPath $temporary -Recurse -Force } }

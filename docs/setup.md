@@ -65,7 +65,7 @@ Other options:
 - `--non-interactive`: leave required personal choices pending.
 - `--wait-seconds 0`: check the connection immediately.
 - `--state-dir PATH`: choose a private report/backup directory.
-- Unix launchers: `--check-dependencies` tests only computer tools; `--accept-tool-licenses` explicitly accepts the supplied SDK terms for an intentional automated run.
+- All launchers: `--check-dependencies` tests only computer tools; `--accept-tool-licenses` explicitly accepts the supplied SDK terms for an intentional automated run.
 
 ## Private records and troubleshooting
 

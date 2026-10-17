@@ -59,7 +59,7 @@ sh source/companion/test/recovery/run.sh .
 
 Build the bridge/app first for suites that use their compiled classes; those Java suites need the SDK/JDK above. The recovery harness requires only JDK 17 and compiles the unchanged production engine against synthetic boundary stand-ins; it needs no Android SDK or phone. Its 108 assertions across 18 fault cases check ordering, classification, conflicts and recovery decisions. It does not emulate AtomicFile durability, actual Binder/vendor SQLite behavior or Android framework process death. See its [README](../source/companion/test/recovery/README.md) for the exact boundary.
 
-Current local results include 128 Python tests, 66 PowerShell bootstrap plus 5 dependency-only checks, the Java contracts and full production Android compilation. [Verification](verification.md) records individual suite counts. Native GitHub CI remains pending until its runs complete. Optional locally captured fixtures must stay private.
+Current local results include 128 Python tests, 66 PowerShell bootstrap plus 5 dependency-only checks, the Java contracts and full production Android compilation. [Verification](verification.md) records individual suite counts. [Native GitHub CI](https://github.com/edydex/hibreak-auto-scale/actions/runs/39076339325) passed on macOS ARM64, Linux x86_64 and Windows x86_64, including real fresh private-tool downloads. Windows PowerShell 5.1 also passed; platform-specific Python skips are recorded in verification. Optional locally captured fixtures must stay private.
 
 ## Manual CLI and simulator
 

@@ -17,7 +17,7 @@ The setup revision can change without changing the APK. `release.json` is the au
 
 ## Public beta release validation
 
-The first public release is tagged **v1.1.1-beta.1**. Its companion remains 1.1.1/code 12; this is a distribution prerelease, not an Android version downgrade. Local release checks passed as listed below. Native GitHub CI is pending; its results will be recorded after the runs complete. These checks do not imply a new physical-phone or receiver acceptance test.
+The first public release is tagged **v1.1.1-beta.1**. Its companion remains 1.1.1/code 12; this is a distribution prerelease, not an Android version downgrade. Local release checks passed as listed below. [Native release CI](https://github.com/edydex/hibreak-auto-scale/actions/runs/39076339325) passed on 17 October 2026: macOS 14 ARM64, Ubuntu 24.04 x86_64 and Windows Server 2022 x86_64, plus the Android build and packaging job. These checks do not imply a new physical-phone or receiver acceptance test.
 
 ## Phone and desktop-head-unit checks
 
@@ -58,7 +58,7 @@ The build check generated a local test-key APK. **Only the original shipped APK 
 
 The recovery suite compiles the unchanged production `ScaleEngine`, `HostDensity` and `PreparationWindow`. Synthetic Android/JSON/store/bridge boundaries exercise journal-before-setter ordering, failure classification, persisted-policy readback, conflict preservation and restoration. A fresh engine loads the last independently committed state snapshot to model a restart. These tests do not establish Android AtomicFile durability, actual vendor database/cache behavior or framework process death. See the [recovery harness contract](../source/companion/test/recovery/README.md).
 
-Fresh private-tool extraction/startup and cache reuse previously passed on Apple Silicon. Pinned non-native archives/checksums were checked, including production HTTPS retrieval of the Windows Google archive. The configured CI also checks native Linux/macOS/Windows hosts and fresh dependency downloads; a configured job is not a completed result. Its pending runs do not simulate physical USB authorization, a new phone or a receiver.
+[Native CI](https://github.com/edydex/hibreak-auto-scale/actions/runs/39076339325) passed all four jobs. The Mac and Linux jobs ran all 128 Python tests; Windows ran the same discovery with 27 POSIX/symlink-specific skips and passed 66 bootstrap plus 5 dependency-mode checks in Windows PowerShell 5.1. All three hosts forced missing-tool discovery and performed real pinned Python/ADB downloads, hash verification, extraction and executable startup without starting ADB or contacting a phone. Windows used embedded Python 3.13.16 AMD64; Mac/Linux used Python 3.12.15. Android CI provisioned its own pinned command-line tools, compiled the production source with JDK 17, ran the Java contracts/recovery tests, cryptographically verified the original APK and produced two byte-identical release kits. Physical USB authorization, drivers and a new phone/receiver remain separate acceptance work.
 
 Synthetic host checks do not access Bluetooth radios or replace final-build hardware acceptance. Exact suite commands are in [development](development.md); consult the release workflow results for the run attached to that release.
 
