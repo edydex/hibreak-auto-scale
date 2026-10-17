@@ -1,0 +1,52 @@
+# Private device state and diagnostics: never commit or publish.
+records/
+setup-records/
+private-ui/
+**/*-audit.json
+**/*-report.json
+**/automatic-state.json
+**/probe.json
+**/original-phone-policy.json
+**/original-settings.json
+Your-phone-recovery/
+phone-recovery/
+*.log
+*.png
+*.jpg
+*.jpeg
+*.wav
+*.aiff
+
+# Runtime downloads and build tools.
+.runtime/
+.cache/
+downloads/
+runtime/
+platform-tools/
+android-sdk/
+source/android-sdk/
+**/build/
+**/signing/
+source/companion/assets/display-policy-bridge.jar
+*.jks
+*.keystore
+*password*
+*.pem
+*.key
+
+# Generated artifacts and Python/editor files.
+dist/
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.idea/
+.vscode/
+*.tmp
+*.download
+fixture-*/
+
+# Release assets are generated, not committed. The verified APK/JAR at root
+# are intentional published inputs and are NOT matched by these patterns.
+*.zip
+SHA256SUMS

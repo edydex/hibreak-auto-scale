@@ -1,0 +1,13 @@
+{
+  "format": "hibreak-auto-scale-release-v1",
+  "package": "org.hibreak.autoscale",
+  "version_code": 12,
+  "version_name": "1.1.1",
+  "apk": "HiBreak-Auto-Scale.apk",
+  "apk_sha256": "eb5ed4a486be321c8c00c0550699f019dcb725ff517b59a320ab70134a9e9537",
+  "signer_certificate_sha256": "dfebc984be01f64f0a084225cbf591bed77f9d89811c58d055264030c17bef85",
+  "tested_android_sdk": 34,
+  "ui_language": "English",
+  "setup_revision": "2026.10.17.3",
+  "toolkit_release": "v1.1.1-beta.1"
+}

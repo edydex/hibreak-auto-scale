@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a scaling, setup, recovery or compatibility problem.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not upload raw setup reports, probe.json, backups, screenshots with personal content, hardware serials, accounts, locations or Bluetooth addresses. Keep recovery data private. Use Stop and restore before uninstalling; preserve app data if restoration fails.
+  - type: input
+    id: phone
+    attributes:
+      label: Phone model and firmware/build version
+      placeholder: Bigme HiBreak S; firmware version (no serial number)
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Companion, Android Auto and computer OS versions
+    validations:
+      required: true
+  - type: input
+    id: receiver
+    attributes:
+      label: Head-unit/car model and wired or wireless connection
+  - type: textarea
+    id: steps
+    attributes:
+      label: What happened and how to reproduce it
+      description: Include expected behavior, actual behavior and whether it happens every time.
+    validations:
+      required: true
+  - type: textarea
+    id: recovery
+    attributes:
+      label: Restoration and recovery status
+      description: Does Stop and restore succeed? Copy only the short sanitized status, never the backup or raw report.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I removed device IDs, account data, addresses, locations and private recovery data.
+          required: true

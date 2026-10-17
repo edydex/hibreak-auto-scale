@@ -1,0 +1,14 @@
+{
+  "purpose": "Human-readable per-phone test record; not executed by the CLI",
+  "phone_hardware_serial": "Record the serial from this phone's status output",
+  "original_backup": "Record this phone's own untouched backup path",
+  "head_unit": "Record the actual car or aftermarket unit",
+  "tested_app_dpi": null,
+  "requested_text_enhance": null,
+  "native_projection_resolution": null,
+  "native_projection_dpi": null,
+  "evidence": [],
+  "layout_review": "pending",
+  "phone_reboot_persistence": "pending",
+  "physical_car_acceptance": "pending"
+}

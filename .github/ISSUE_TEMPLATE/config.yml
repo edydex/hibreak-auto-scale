@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Setup and troubleshooting
+    url: https://github.com/edydex/hibreak-auto-scale/blob/main/docs/setup.md
+    about: Read the setup and connection instructions first.
+  - name: Undo and recovery
+    url: https://github.com/edydex/hibreak-auto-scale/blob/main/docs/undo.md
+    about: Preserve private state if restoration needs attention.
